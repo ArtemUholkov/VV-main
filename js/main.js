@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    Auto switcher
+    // Auto switcher
     function initAutoSwitcher(selector, interval = 2000) {
         const container = document.querySelector(selector);
         if (!container) return;
