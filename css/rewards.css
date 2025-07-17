@@ -214,4 +214,9 @@
         margin-left: auto;
         margin-bottom: 42px;
     }
+
+    .rewards__list-annotation {
+        margin-bottom: 42px;
+        line-height: 1.65;
+    }
 }

@@ -112,19 +112,36 @@
     .section__wellness-plan .main-container {
         grid-template-columns: 400px 1fr;
         grid-column-gap: 32px;
+        align-items: center;
     }
 
     .section__wellness-plan .video-item {
         width: 400px;
         max-width: none;
         height: 565px;
+        box-shadow: 0 1px 12px 0 rgb(0 0 0 / 25%);
     }
 
     .wellness-plan__text {
         align-items: flex-start;
     }
 
+    .wellness-plan__text h2 {
+        display: grid;
+    }
+
+    .wellness-plan__description {
+        max-width: 616px;
+    }
+
     .wellness-plan__list {
+        max-width: 518px;
         margin-bottom: 32px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .section__wellness-plan .main-container {
+        grid-column-gap: 200px;
     }
 }

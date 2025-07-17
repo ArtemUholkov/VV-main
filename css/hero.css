@@ -194,6 +194,23 @@
 }
 
 @media (min-width: 1024px) {
+    .hero__inner {
+        margin-bottom: 64px;
+    }
+
+    .hero__text {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .home__hero h1 span {
+        font-size: 52px;
+    }
+
+    .hero__description {
+        max-width: 490px;
+        font-size: 20px;
+    }
 
     .hero__services-list-item:not(.rewards) a:hover .title {
         transform: translate(-50%, -116%);

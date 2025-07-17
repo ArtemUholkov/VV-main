@@ -136,8 +136,19 @@
         padding-bottom: 32px;
     }
 
+    .get-clarity__list-item {
+        grid-gap: 0 12px;
+    }
+
     .get-clarity__text .btn {
         margin-right: 0;
         margin-left: 0;
+    }
+}
+
+@media (min-width: 1280px) {
+    .get-clarity__text {
+        padding-top: 55px;
+        padding-bottom: 55px;
     }
 }

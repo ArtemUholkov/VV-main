@@ -175,13 +175,18 @@
     }
 
     .cta-blueprint__text {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         align-items: flex-start;
         text-align: left;
     }
 
     .cta-blueprint__list-wrapper {
+        margin-bottom: 42px;
+    }
+
+    .section__cta-blueprint .section-description {
+        max-width: 554px;
         margin-bottom: 42px;
     }
 
@@ -204,4 +209,11 @@
         }
     }
 
+}
+
+@media (min-width: 1280px) {
+    .section__cta-blueprint {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
 }

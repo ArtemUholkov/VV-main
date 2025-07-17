@@ -41,3 +41,15 @@
     margin-top: 32px;
     color: #8B8E99; 
 }
+
+@media (min-width: 768px) {
+    .section__cta-start {
+        background-image: url("../img/cta-start/bg-desktop.webp");
+    }
+}
+
+@media (min-width: 1024px) {
+    .section__cta-start {
+        margin-top: 200px;
+    }
+}

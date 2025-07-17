@@ -113,3 +113,18 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (min-width: 1280px) {
+    .section__cta-join {
+        margin-top: 200px;
+    }
+
+    .cta-join {
+        padding: 40px;
+        grid-column-gap: 64px;
+    }
+
+    .cta-join__description {
+        margin-bottom: 42px;
+    }
+}

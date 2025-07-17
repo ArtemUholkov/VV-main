@@ -103,5 +103,27 @@
     }
 }
 
+@media (min-width: 1280px) {
+    .reviews__tabs {
+        grid-template-columns: 1fr 526px;
+        grid-column-gap: 62px;
+    }
+
+    .reviews__tab-content {
+        height: 634px;
+        padding-right: 12px;
+    }
+
+    .section-reviews .review-item {
+        margin-bottom: 12px;
+    }
+    .reviews__tab-content .review-item-info {
+        margin-right: auto;
+        margin-left: auto;
+        max-width: 428px;
+        color: #8B8E99;
+    }
+}
+
 
 
