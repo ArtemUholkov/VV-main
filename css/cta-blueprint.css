@@ -217,4 +217,8 @@
         padding-top: 70px;
         padding-bottom: 70px;
     }
+
+    .cta-blueprint__img {
+        width: 628px;
+    }
 }
