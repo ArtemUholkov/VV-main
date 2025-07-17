@@ -193,3 +193,25 @@
         opacity: 1;
     }
 }
+
+@media (min-width: 1280px) {
+    .rewards__list {
+        margin-bottom: 42px;
+        grid-column-gap: 20px;
+    }
+
+    .rewards__list-item {
+        justify-items: center;
+    }
+
+    .rewards__list-item img {
+        width: 164px;
+    }
+
+    .rewards__info-list {
+        max-width: 840px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 42px;
+    }
+}

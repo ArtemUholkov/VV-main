@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleResize() {
-            if (window.innerWidth >= 768) {
+            if (window.innerWidth >= 1279) {
                 startSwitcher();
             } else {
                 stopSwitcher();
@@ -154,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', handleResize);
     }
 
-    initAutoSwitcher('.switch-list', 1000);
+    initAutoSwitcher('.how-it-works__advantages-list', 2000);
+    initAutoSwitcher('.progress__list', 2000);
 
 });
 
