@@ -1,0 +1,283 @@
+document.addEventListener('DOMContentLoaded', () => {
+    //Video play
+    document.querySelectorAll('.video-item').forEach(preview => {
+        const therapyVideo = preview.querySelector('video');
+
+        preview.addEventListener('mouseenter', () => {
+            therapyVideo.play();
+            preview.classList.add('active');
+        });
+
+        preview.addEventListener('mouseleave', () => {
+            therapyVideo.pause();
+        });
+    });
+
+    //Tabs
+    function openTab(tabName, buttonElement) {
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.querySelectorAll('.tab-content[data-tab="' + tabName + '"]').forEach(content => {
+            content.classList.add('active');
+        });
+        buttonElement.classList.add('active');
+
+    }
+
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            openTab(tabName, this);
+        });
+    });
+
+    if (tabButtons.length > 0) {
+        tabButtons[0].click();
+    }
+
+    //Open modal in nexus section
+    document.querySelectorAll('.nexus__list-item').forEach(item => {
+        const openBtn = item.querySelector('.btn-secondary__inverse');
+        const modal = item.querySelector('.nexus__list-modal');
+        const closeBtn = item.querySelector('.nexus__list-modal-close');
+
+        openBtn?.addEventListener('click', () => {
+            modal?.classList.add('active');
+        });
+
+        closeBtn?.addEventListener('click', () => {
+            modal?.classList.remove('active');
+        });
+    });
+
+    //Cycle switcher
+    function cycleActiveClass(selector, delay = 500) {
+        let elements = [];
+        let index = 0;
+        let timeoutId = null;
+
+        function clearClasses() {
+            elements.forEach(el => el.classList.remove('active'));
+        }
+
+        function activateNext() {
+            if (index >= elements.length) {
+                clearClasses();
+                index = 0;
+            }
+
+            elements[index].classList.add('active');
+            index++;
+
+            timeoutId = setTimeout(activateNext, delay);
+        }
+
+        function startCycle() {
+            if (window.innerWidth >= 768 && !timeoutId) {
+                elements = document.querySelectorAll(selector);
+                if (elements.length === 0) return;
+                activateNext();
+            }
+        }
+
+        function stopCycle() {
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+                timeoutId = null;
+                clearClasses();
+                index = 0;
+            }
+        }
+
+        function handleResize() {
+            if (window.innerWidth >= 768) {
+                startCycle();
+            } else {
+                stopCycle();
+            }
+        }
+
+        window.addEventListener('resize', handleResize);
+        handleResize();
+    }
+
+    cycleActiveClass('.cta-blueprint__list-item', 1000);
+
+
+
+    Auto switcher
+    function initAutoSwitcher(selector, interval = 2000) {
+        const container = document.querySelector(selector);
+        if (!container) return;
+
+        const items = container.querySelectorAll('.switch-item');
+        if (items.length === 0) return;
+
+        let currentIndex = 0;
+        let intervalId = null;
+
+        function toggleActive() {
+            items.forEach(item => item.classList.remove('active'));
+            items[currentIndex].classList.add('active');
+            currentIndex = (currentIndex + 1) % items.length;
+        }
+
+        function startSwitcher() {
+            if (window.innerWidth >= 768 && !intervalId) {
+                toggleActive();
+                intervalId = setInterval(toggleActive, interval);
+            }
+        }
+
+        function stopSwitcher() {
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+                items.forEach(item => item.classList.remove('active'));
+            }
+        }
+
+        function handleResize() {
+            if (window.innerWidth >= 768) {
+                startSwitcher();
+            } else {
+                stopSwitcher();
+            }
+        }
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+    }
+
+    initAutoSwitcher('.switch-list', 1000);
+
+});
+
+
+
+//Slider hero
+let heroSlider = null;
+function initHeroSwiper() {
+    if (window.innerWidth < 1400) {
+        if (!heroSlider) {
+            heroSlider = new Swiper('.hero__services-swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            });
+        }
+    } else {
+        if (heroSlider) {
+            heroSlider.destroy(true, true);
+            heroSlider = null;
+        }
+    }
+}
+window.addEventListener('DOMContentLoaded', initHeroSwiper);
+window.addEventListener('resize', initHeroSwiper);
+
+//Slider care network
+let networkSlider = null;
+function initNetworkSwiper() {
+    if (window.innerWidth < 1024) {
+        if (!networkSlider) {
+            networkSlider = new Swiper('.care-network__swiper', {
+                spaceBetween: 20,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                },
+            });
+        }
+    } else {
+        if (networkSlider) {
+            networkSlider.destroy(true, true);
+            networkSlider = null;
+        }
+    }
+}
+window.addEventListener('DOMContentLoaded', initNetworkSwiper);
+window.addEventListener('resize', initNetworkSwiper);
+
+//Slider therapies
+let therapiesSlider = null;
+
+function initTherapiesSwiper() {
+    const isLargeScreen = window.innerWidth >= 1280;
+
+    if (therapiesSlider) {
+        therapiesSlider.destroy(true, true);
+        therapiesSlider = null;
+    }
+
+    therapiesSlider = new Swiper('.therapies__swiper', {
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        ...(isLargeScreen
+            ? {
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            }
+            : {
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            }),
+    });
+}
+
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(initTherapiesSwiper, 300);
+});
+
+window.addEventListener('DOMContentLoaded', initTherapiesSwiper);
+
+
+//Slider cta blueprint
+let ctaBlueprintSlider = null;
+function initCtaBlueprintSlider() {
+    if (window.innerWidth < 768) {
+        if (!ctaBlueprintSlider) {
+            ctaBlueprintSlider = new Swiper('.cta-blueprint__list-wrapper', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                watchSlidesProgress: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    768: {
+                        slidesPerView: 2,
+                    },
+                },
+            });
+        }
+    } else {
+        if (ctaBlueprintSlider) {
+            ctaBlueprintSlider.destroy(true, true);
+            ctaBlueprintSlider = null;
+        }
+    }
+}
+
+window.addEventListener('DOMContentLoaded', initCtaBlueprintSlider);
+window.addEventListener('resize', initCtaBlueprintSlider);
