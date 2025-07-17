@@ -114,3 +114,9 @@
         margin-top: 68px;
     }
 }
+
+@media (min-width: 1480px) {
+    .therapies__swiper {
+        padding-left: calc((100vw - 1440px) / 2);
+    }
+}

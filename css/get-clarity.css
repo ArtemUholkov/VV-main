@@ -152,3 +152,10 @@
         padding-bottom: 55px;
     }
 }
+
+@media (min-width: 1480px) {
+    .section__get-clarity .main-container {
+        max-width: 100%;
+        padding-right: calc((100vw - 1440px) / 2);
+    }
+}
