@@ -52,7 +52,7 @@
 }
 
 .nexus__list-modal {
-    inset: 16px;
+    inset: 0;
     display: flex;
     flex-direction: column;
     padding: 18px;

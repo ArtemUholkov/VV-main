@@ -16,6 +16,7 @@
 
 .hero__inner .badge {
     margin-bottom: 30px;
+    font-size: 14px;
 }
 
 .hero__text {
@@ -213,12 +214,57 @@
     white-space: nowrap;
 }
 
+.hero__services-list-item:not(.rewards) .hero__services-list-inner:hover .title {
+    transform: translate(-50%, -116%);
+}
+
+.hero__services-list-item.telehealth .hero__services-list-inner:hover .title {
+    transform: translate(-50%, -80%);
+}
+
+.hero__services-list-item.telehealth .hero__services-list-inner:hover .title,
+.hero__services-list-item.home-labs .hero__services-list-inner:hover .title,
+.hero__services-list-item.rewards .hero__services-list-inner:hover .title{
+    background-color: transparent;
+    backdrop-filter: blur(0);
+}
+
+.hero__services-list-item .hero__services-list-inner:hover .btn-secondary {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+.hero__services-list-item.nexus .hero__services-list-inner:hover .operators {
+    opacity: 1;
+    transition-duration: .25s;
+}
+
+.hero__services-list-item.nexus .hero__services-list-inner:hover .nexus-img {
+    transform: rotate(10deg);
+}
+
+.hero__services-list-item.therapies .hero__services-list-inner:hover:after {
+    top: 0;
+}
+
+.hero__services-list-item.therapies img {
+    transition-duration: .25s;
+}
+
+.hero__services-list-item.therapies .hero__services-list-inner:hover img {
+    transform: translateY(-50px);
+}
+
 @media (min-width: 1024px) {
     .hero__inner {
         display: grid;
         grid-template-columns: 1fr 514px;
         margin-bottom: 64px;
         align-items: center;
+    }
+
+    .hero__inner .badge {
+        font-size: 18px;
     }
 
     .hero__text {
@@ -243,47 +289,6 @@
 
     .hero-slider {
         height: 582px;
-    }
-
-    .hero__services-list-item:not(.rewards) .hero__services-list-inner:hover .title {
-        transform: translate(-50%, -116%);
-    }
-
-    .hero__services-list-item.telehealth .hero__services-list-inner:hover .title {
-        transform: translate(-50%, -80%);
-    }
-
-    .hero__services-list-item.telehealth .hero__services-list-inner:hover .title,
-    .hero__services-list-item.home-labs .hero__services-list-inner:hover .title,
-    .hero__services-list-item.rewards .hero__services-list-inner:hover .title{
-        background-color: transparent;
-        backdrop-filter: blur(0);
-    }
-
-    .hero__services-list-item .hero__services-list-inner:hover .btn-secondary {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-
-    .hero__services-list-item.nexus .hero__services-list-inner:hover .operators {
-        opacity: 1;
-        transition-duration: .25s;
-    }
-
-    .hero__services-list-item.nexus .hero__services-list-inner:hover .nexus-img {
-        transform: rotate(10deg);
-    }
-
-    .hero__services-list-item.therapies .hero__services-list-inner:hover:after {
-        top: 0;
-    }
-
-    .hero__services-list-item.therapies img {
-        transition-duration: .25s;
-    }
-
-    .hero__services-list-item.therapies .hero__services-list-inner:hover img {
-        transform: translateY(-50px);
     }
 }
 

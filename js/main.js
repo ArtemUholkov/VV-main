@@ -297,6 +297,12 @@ function initTherapiesSwiper() {
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
                 },
+                freeMode: true,
+                mousewheel: {
+                    forceToAxis: true,
+                    sensitivity: 1,
+                    releaseOnEdges: true,
+                },
             }
             : {
                 pagination: {
@@ -304,6 +310,14 @@ function initTherapiesSwiper() {
                     clickable: true,
                 },
             }),
+        on: {
+            init: function () {
+                initVideoPreviewBehavior(this);
+            },
+            slideChangeTransitionEnd: function () {
+                handleVideoSlideChange(this);
+            }
+        }
     });
 }
 
@@ -314,6 +328,52 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('DOMContentLoaded', initTherapiesSwiper);
+
+// Therapy video
+
+function initVideoPreviewBehavior(swiper) {
+    const isMobile = window.innerWidth < 1024;
+    const videoItems = document.querySelectorAll('.therapy__video-item');
+
+    if (isMobile) {
+        handleVideoSlideChange(swiper); // Инициализировать первый раз
+    } else {
+        videoItems.forEach(item => {
+            const video = item.querySelector('video');
+            if (!video) return;
+
+            video.pause();
+
+            item.addEventListener('mouseenter', () => {
+                video.play();
+                item.classList.add('active');
+            });
+
+            item.addEventListener('mouseleave', () => {
+                video.pause();
+            });
+        });
+    }
+}
+
+function handleVideoSlideChange(swiper) {
+    const isMobile = window.innerWidth < 1024;
+    if (!isMobile) return;
+
+    swiper.slides.forEach(slide => {
+        const video = slide.querySelector('video');
+        if (!video) return;
+
+        if (slide.classList.contains('swiper-slide-active')) {
+            video.play();
+            slide.classList.add('active');
+        } else {
+            video.pause();
+            slide.classList.remove('active');
+        }
+    });
+}
+
 
 
 //Slider cta blueprint

@@ -29,17 +29,27 @@
     height: 100%;
     max-width: none;
     object-fit: cover;
-    transition-duration: .25s;
+    transition-duration: .5s;
 }
 
-.therapies__slide.active .therapies__slide-preview {
-    opacity: 0;
-    z-index: -1;
-}
 
 .therapies__slide-video-wrapper {
     position: relative;
     height: 100%;
+    transition-duration: .25s;
+    opacity: 0;
+}
+
+.therapies__slide.active .therapies__slide-video-wrapper {
+    opacity: 1;
+    z-index: 1;
+}
+
+@media (max-width: 1023px) {
+    .therapies__slide.swiper-slide-active .therapies__slide-video-wrapper {
+        opacity: 1;
+        z-index: 1;
+    }
 }
 
 .therapies__slide-video-wrapper:after {
