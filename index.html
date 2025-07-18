@@ -20,7 +20,6 @@
     <link rel="stylesheet" type="text/css" href="./css/nexus.css">
     <link rel="stylesheet" type="text/css" href="./css/transforms.css">
     <link rel="stylesheet" type="text/css" href="./css/cta-blueprint.css">
-    <link rel="stylesheet" type="text/css" href="./css/wellness-plan.css">
     <link rel="stylesheet" type="text/css" href="./css/how-it-works.css">
     <link rel="stylesheet" type="text/css" href="./css/progress.css">
     <link rel="stylesheet" type="text/css" href="./css/rewards.css">
@@ -31,6 +30,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
+
+    <main>
     <section class="home__hero" >
         <div class="main-container">
             <div class="hero__inner">
@@ -44,35 +45,43 @@
                         Personalized Wellness
                     </h1>
                     <p class="hero__description">The future of care, reimagined. Provider-led, Powered by AI, Designed to grow with you.</p>
-                    <a href="/vitality-wellness-blueprint/" class="btn btn-accent">Start your Vitality Blueprint</a>
+                    <a href="/vitality-wellness-blueprint-lp-new/" class="btn btn-accent">Start your Vitality Blueprint</a>
                 </div>
-                <div class="hero__slider"></div>
+                <div class="hero-slider">
+                    <div class="hero-slider__viewport">
+                        <picture class="custom-slider__image">
+                            <source srcset="./img/hero/hero-slide-desktop.webp" media="(width >= 768px)" />
+                            <img src="./img/hero/hero-slide-mobile.webp" alt="Start your Vitality Blueprint" />
+                        </picture>
+                    </div>
+                </div>
+
             </div>
             <div class="hero__services-swiper swiper">
                 <ul class="hero__services-list swiper-wrapper">
                     <li class="hero__services-list-item swiper-slide telehealth">
-                        <a href="">
+                        <a class="hero__services-list-inner" href="/book-your-consultation/">
                             <img src="./img/hero/telehealth.webp" alt="Telehealth Consults">
                             <span class="title">Telehealth Consults</span>
                             <span class="btn btn-secondary">Meet Your Provider</span>
                         </a>
                     </li>
                     <li class="hero__services-list-item swiper-slide wellness-shop">
-                        <a href="">
+                        <a class="hero__services-list-inner" href="/shop/">
                             <img src="./img/hero/wellness-shop.webp" alt="Wellness shop">
                             <span class="title">Wellness shop</span>
                             <span class="btn btn-secondary">Shop Therapies</span>
                         </a>
                     </li>
                     <li class="hero__services-list-item swiper-slide home-labs">
-                        <a href="">
+                        <a class="hero__services-list-inner" href="/product-category/blood-work/">
                             <img src="./img/hero/home-labs.webp" alt="At-Home Labs">
                             <span class="title">At-Home Labs</span>
                             <span class="btn btn-secondary">View Lab Options</span>
                         </a>
                     </li>
                     <li class="hero__services-list-item swiper-slide nexus">
-                        <a href="">
+                        <a class="hero__services-list-inner" href="/vitality-wellness-blueprint-lp-new/">
                             <img src="./img/hero/nexus.webp" alt="Vitality Nexus" class="nexus-img">
                             <img src="./img/hero/operators.webp" alt="AI operators" class="operators">
                             <span class="btn btn-nexus">
@@ -82,18 +91,18 @@
                         </a>
                     </li>
                     <li class="hero__services-list-item swiper-slide therapies">
-                        <a href="">
+                        <a class="hero__services-list-inner" href="/product-category/popular-therapies/">
                             <img src="./img/hero/therapies.webp" alt="Top Therapies">
                             <span class="title">Top Therapies</span>
                             <span class="btn btn-secondary">Explore Top Therapies</span>
                         </a>
                     </li>
                     <li class="hero__services-list-item swiper-slide rewards">
-                        <a href="">
+                        <div class="hero__services-list-inner">
                             <img src="./img/hero/rewards.webp" alt="Join & Start Earning">
-                            <span class="title">VIP Rewards</span>
-                            <span class="btn btn-secondary">Join & Start Earning</span>
-                        </a>
+                            <a href="#vipRewards" class="title">VIP Rewards</a>
+                            <a href="/vip-rewards/" class="btn btn-secondary">Join & Start Earning</a>
+                        </div>
                     </li>
                 </ul>
                 <div class="swiper-pagination"></div>
@@ -110,47 +119,59 @@
             <p class="section-description">Everything you need for personalized healthcare in one integrated platform</p>
             <div class="care-network__swiper swiper">
                 <ul class="care-network__list swiper-wrapper">
-                    <li class="care-network__list-item swiper-slide">
-                        <div class="inner">
-                            <img width="94" height="94" src="./img/care-network/consults.svg" alt="Flexible Consults">
-                            <h3>Flexible Consults</h3>
-                        </div>
-                        <p>Choose message or video visits with your provider</p>
+                    <li class="swiper-slide">
+                        <a class="care-network__list-item" href="/book-your-consultation/">
+                            <div class="inner">
+                                <img width="94" height="94" src="./img/care-network/consults.svg" alt="Flexible Consults">
+                                <h3>Flexible Consults</h3>
+                            </div>
+                            <p>Choose message or video visits with your provider</p>
+                        </a>
                     </li>
-                    <li class="care-network__list-item swiper-slide">
-                        <div class="inner">
-                            <img width="94" height="94" src="./img/care-network/nexus.svg" alt="The Vitality Nexus">
-                            <h3>The Vitality Nexus</h3>
-                        </div>
-                        <p>Personalized wellness and support assistants</p>
+                    <li class="swiper-slide">
+                        <a class="care-network__list-item" href="/vitality-wellness-blueprint-lp-new/">
+                            <div class="inner">
+                                <img width="94" height="94" src="./img/care-network/nexus.svg" alt="The Vitality Nexus">
+                                <h3>The Vitality Nexus</h3>
+                            </div>
+                            <p>Personalized wellness and support assistants</p>
+                        </a>
                     </li>
-                    <li class="care-network__list-item swiper-slide">
-                        <div class="inner">
-                            <img width="94" height="94" src="./img/care-network/home-labs.svg" alt="At-Home Labs">
-                            <h3>At-Home Labs</h3>
-                        </div>
-                        <p>Comprehensive testing in your comfort zone</p>
+                    <li class="swiper-slide">
+                        <a class="care-network__list-item" href="/product-category/blood-work/">
+                            <div class="inner">
+                                <img width="94" height="94" src="./img/care-network/home-labs.svg" alt="At-Home Labs">
+                                <h3>At-Home Labs</h3>
+                            </div>
+                            <p>Comprehensive testing in your comfort zone</p>
+                        </a>
                     </li>
-                    <li class="care-network__list-item swiper-slide">
-                        <div class="inner">
-                            <img width="94" height="94" src="./img/care-network/therapies.svg" alt="Innovative Therapies">
-                            <h3>Compounded Therapies</h3>
-                        </div>
-                        <p>Personalized treatments for your needs</p>
+                    <li class="swiper-slide">
+                        <a class="care-network__list-item" href="/shop/">
+                            <div class="inner">
+                                <img width="94" height="94" src="./img/care-network/therapies.svg" alt="Innovative Therapies">
+                                <h3>Innovative Therapies</h3>
+                            </div>
+                            <p>Personalized treatments for your needs</p>
+                        </a>
                     </li>
-                    <li class="care-network__list-item swiper-slide">
-                        <div class="inner">
-                            <img width="94" height="94" src="./img/care-network/rewards.svg" alt="VIP Rewards">
-                            <h3>VIP Rewards</h3>
-                        </div>
-                        <p>Earn points and unlock exclusive benefits</p>
+                    <li class="swiper-slide">
+                        <a class="care-network__list-item" href="/vip-rewards/">
+                            <div class="inner">
+                                <img width="94" height="94" src="./img/care-network/rewards.svg" alt="VIP Rewards">
+                                <h3>VIP Rewards</h3>
+                            </div>
+                            <p>Earn points and unlock exclusive benefits</p>
+                        </a>
                     </li>
-                    <li class="care-network__list-item swiper-slide">
-                        <div class="inner">
-                            <img width="94" height="94" src="./img/care-network/dashboard.svg" alt="Member Dashboard">
-                            <h3>Member Dashboard</h3>
-                        </div>
-                        <p>Track progress and manage your journey </p>
+                    <li class="swiper-slide">
+                        <a class="care-network__list-item" href="/my-account/">
+                            <div class="inner">
+                                <img width="94" height="94" src="./img/care-network/dashboard.svg" alt="Member Dashboard">
+                                <h3>Member Dashboard</h3>
+                            </div>
+                            <p>Track progress and manage your journey </p>
+                        </a>
                     </li>
                 </ul>
                 <div class="swiper-pagination"></div>
@@ -178,7 +199,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/weight-loss.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+                    <a href="/product-category/weightloss-therapies/" class="btn btn-accent">Learn More</a>
                 </div>
                 <div class="therapies__slide swiper-slide video-item">
                     <span class="therapies__slide-title">Hormone</span>
@@ -186,7 +207,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/hormone.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+                    <a href="/product-category/hormone-therapies/" class="btn btn-accent">Learn More</a>
                 </div>
                 <div class="therapies__slide swiper-slide video-item">
                     <span class="therapies__slide-title">Wellness Packs & Supplements</span>
@@ -194,7 +215,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/wellness-pack.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+                    <a href="/product-category/wellness-packs-supplements" class="btn btn-accent">Learn More</a>
                 </div>
                 <div class="therapies__slide swiper-slide video-item">
                     <span class="therapies__slide-title">Metabolic</span>
@@ -202,7 +223,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/metabolic.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+<!--                    <a href="" class="btn btn-accent">Learn More</a>-->
                 </div>
                 <div class="therapies__slide swiper-slide video-item">
                     <span class="therapies__slide-title">Longevity</span>
@@ -210,7 +231,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/longevity.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+                    <a href="/product-category/other/anti-aging-other/" class="btn btn-accent">Learn More</a>
                 </div>
                 <div class="therapies__slide swiper-slide video-item">
                     <span class="therapies__slide-title">Skin/Hair</span>
@@ -218,7 +239,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/skin-hair.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+                    <a href="/product-category/other/anti-aging-other/" class="btn btn-accent">Learn More</a>
                 </div>
                 <div class="therapies__slide swiper-slide video-item">
                     <span class="therapies__slide-title">Sexual Health</span>
@@ -226,7 +247,7 @@
                     <video class="therapies__slide-video" muted loop playsinline preload="none">
                         <source src="./videos/sexual-health.mp4" type="video/mp4">
                     </video>
-                    <a href="" class="btn btn-accent">Learn More</a>
+                    <a href="/product-category/sexual-health-therapies/" class="btn btn-accent">Learn More</a>
                 </div>
             </div>
             <div class="swiper-pagination"></div>
@@ -280,7 +301,7 @@
                          <p class="get-clarity__list-subtitle">Clear next steps</p>
                      </li>
                  </ul>
-                <a href="#" class="btn btn-primary">See At-Home Lab Kits</a>
+                <a href="/product-category/blood-work/" class="btn btn-primary">See At-Home Lab Kits</a>
             </div>
         </div>
     </section>
@@ -310,7 +331,7 @@
                             <p class="nexus__list-modal-title">Thoryn</p>
                             <p class="nexus__list-modal-description">Hey I’m Thoryn, your personal AI Wellness Coach. I help track your progress, and build a wellness blueprint that evolves with you. I work alongside your provider to fine-tune treatments, offer proactive guidance, and support your long-term wellness goals</p>
                         </div>
-                        <a href="" class="btn btn-secondary__inverse">Start My Wellness Blueprint</a>
+                        <a href="/vitality-wellness-blueprint-lp-new/" class="btn btn-secondary__inverse">Start My Wellness Blueprint</a>
                     </div>
                 </li>
                 <li class="nexus__list-item video-item">
@@ -366,7 +387,7 @@
                         <p>You'll get real-time tracking, milestone nudges, and plan refinements — all informed by your ongoing progress.</p>
                     </li>
                 </ul>
-                <a href="" class="btn btn-primary">Learn How It Works</a>
+                <a href="/registration/" class="btn btn-primary">Learn How It Works</a>
             </div>
         </div>
     </section>
@@ -429,53 +450,7 @@
                     </div>
 
                 </div>
-                <a href="" class="btn btn-primary">Build Your Blueprint</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section__wellness-plan">
-        <div class="main-container">
-            <div class="video-item">
-                <img src="./img/ai/thoryn.webp " alt="Thoryn" class="wellness-plan__slide-preview">
-                <video class="wellness-plan__slide-video" muted loop playsinline preload="none">
-                    <source src="./videos/thoryn.mp4" type="video/mp4">
-                </video>
-                <div class="wellness-plan__video-item-description">
-                    <p class="wellness-plan__video-item-title">Thoryn</p>
-                    <p>Try magnesium glycinate and a wind-down routine tonight!</p>
-                </div>
-            </div>
-            <div class="wellness-plan__text">
-                <h2>
-                    <span>Try a Wellness Plan</span>
-                    with Thoryn
-                </h2>
-                <p class="wellness-plan__description">Your AI wellness coach, working with your provider to optimize your care. Let Thoryn build and refine your personalized wellness plan. Designed to support your journey with provider-aligned intelligence.</p>
-                <ul class="wellness-plan__list">
-                    <li class="wellness-plan__list-item">
-                        <span class="wellness-plan__list-item-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 25 25"><path stroke="#F9A351" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m22.09 7.929-8.5 8.5-5-5-6.5 6.5"/><path stroke="#F9A351" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16.09 7.929h6v6"/></svg>
-                        </span>
-                        <h3>Lab-Integrated Planning</h3>
-                        <p>Thoryn analyzes your results and recommends updates to your care plan in sync with your provider.</p>
-                    </li>
-                    <li class="wellness-plan__list-item">
-                        <span class="wellness-plan__list-item-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none" viewBox="0 0 25 25"><path stroke="#F9A351" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.08 2.929v7.527a2 2 0 0 1-.21.896L4.8 21.479a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127a2.002 2.002 0 0 1-.21-.896V2.929M8.58 2.929h7M7.08 16.929h10"/></svg>
-                        </span>
-                        <h3>Therapy Optimization</h3>
-                        <p>Receive AI-powered suggestions for adjusting treatments based on your ongoing progress and feedback.</p>
-                    </li>
-                    <li class="wellness-plan__list-item">
-                        <span class="wellness-plan__list-item-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" fill="none" viewBox="0 0 24 25"><path stroke="#F9A351" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22.429c5.523 0 10-4.477 10-10s-4.477-10-10-10-10 4.477-10 10 4.477 10 10 10Z"/><path stroke="#F9A351" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.429v6l4 2"/></svg>
-                        </span>
-                        <h3>Real-Time Support</h3>
-                        <p>Monitor your milestones and get timely insights available anywhere, anytime.</p>
-                    </li>
-                </ul>
-                <a href="#" class="btn btn-primary">See Thoryn in Action</a>
+                <a href="/vitality-wellness-blueprint-lp-new/" class="btn btn-primary">Build Your Blueprint</a>
             </div>
         </div>
     </section>
@@ -488,7 +463,7 @@
                 </h2>
                 <p class="section-description">A smarter wellness journey, powered by data, guided by providers, and made personal with AI.</p>
                 <div class="how-it-works__btn-wrapper desktop">
-                    <a href="" class="btn btn-primary">Start With Your Blueprint</a>
+                    <a href="/vitality-wellness-blueprint-lp-new/" class="btn btn-primary">Start With Your Blueprint</a>
                 </div>
             </div>
             <div class="how-it-works__lists">
@@ -519,38 +494,46 @@
                     </li>
                 </ol>
                 <ul class="how-it-works__advantages-list">
-                    <li class="how-it-works__advantages-list-item switch-item">
-                        <span class="how-it-works__advantages-list-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path stroke="#6EAFD0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M26.666 17.333c0 6.667-4.666 10-10.213 11.934-.29.098-.606.093-.893-.014C10 27.333 5.333 24 5.333 17.333V8a1.333 1.333 0 0 1 1.333-1.333c2.667 0 6-1.6 8.32-3.627a1.56 1.56 0 0 1 2.027 0c2.333 2.04 5.653 3.627 8.32 3.627A1.333 1.333 0 0 1 26.666 8v9.333Z"/><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="m12 16 2.667 2.667L20 13.333"/></svg>
-                        </span>
-                        <p class="how-it-works__advantages-list-title">LegitScript Certified</p>
-                        <p class="how-it-works__advantages-list-description">Verified pharmacy partner</p>
+                    <li class="how-it-works__advantages-list-item switch-item active">
+                        <a class="how-it-works__advantages-list-item-link" href="https://www.legitscript.com/websites/?checker_keywords=valhallavitality.com" target="_blank" rel="nofollow">
+                            <span class="how-it-works__advantages-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="none" viewBox="0 0 32 32"><path stroke="#6EAFD0" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M26.666 17.333c0 6.667-4.666 10-10.213 11.934-.29.098-.606.093-.893-.014C10 27.333 5.333 24 5.333 17.333V8a1.333 1.333 0 0 1 1.333-1.333c2.667 0 6-1.6 8.32-3.627a1.56 1.56 0 0 1 2.027 0c2.333 2.04 5.653 3.627 8.32 3.627A1.333 1.333 0 0 1 26.666 8v9.333Z"/><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="m12 16 2.667 2.667L20 13.333"/></svg>
+                            </span>
+                            <p class="how-it-works__advantages-list-title">LegitScript Certified</p>
+                            <p class="how-it-works__advantages-list-description">Verified pharmacy partner</p>
+                        </a>
                     </li>
                     <li class="how-it-works__advantages-list-item switch-item">
-                        <span class="how-it-works__advantages-list-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" fill="none" viewBox="0 0 33 32"><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M26.923 17.333c0 6.667-4.666 10-10.213 11.934-.29.098-.606.093-.894-.014C10.256 27.333 5.59 24 5.59 17.333V8a1.333 1.333 0 0 1 1.333-1.333c2.667 0 6-1.6 8.32-3.627a1.56 1.56 0 0 1 2.027 0c2.333 2.04 5.653 3.627 8.32 3.627A1.333 1.333 0 0 1 26.923 8v9.333Z"/></svg>
-                        </span>
-                        <p class="how-it-works__advantages-list-title">HIPAA Compliant</p>
-                        <p class="how-it-works__advantages-list-description">Protected health information</p>
+                        <a class="how-it-works__advantages-list-item-link" href="/privacy-policy/">
+                            <span class="how-it-works__advantages-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" fill="none" viewBox="0 0 33 32"><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M26.923 17.333c0 6.667-4.666 10-10.213 11.934-.29.098-.606.093-.894-.014C10.256 27.333 5.59 24 5.59 17.333V8a1.333 1.333 0 0 1 1.333-1.333c2.667 0 6-1.6 8.32-3.627a1.56 1.56 0 0 1 2.027 0c2.333 2.04 5.653 3.627 8.32 3.627A1.333 1.333 0 0 1 26.923 8v9.333Z"/></svg>
+                            </span>
+                            <p class="how-it-works__advantages-list-title">HIPAA Compliant</p>
+                            <p class="how-it-works__advantages-list-description">Protected health information</p>
+                        </a>
                     </li>
                     <li class="how-it-works__advantages-list-item switch-item">
-                        <span class="how-it-works__advantages-list-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" fill="none" viewBox="0 0 33 32"><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M21.726 28v-2.667A5.333 5.333 0 0 0 16.393 20h-8a5.333 5.333 0 0 0-5.333 5.333V28M12.393 14.667a5.333 5.333 0 1 0 0-10.667 5.333 5.333 0 0 0 0 10.667ZM29.726 28v-2.667a5.333 5.333 0 0 0-4-5.16M21.726 4.173a5.334 5.334 0 0 1 0 10.334"/></svg>
-                        </span>
-                        <p class="how-it-works__advantages-list-title">Licensed Providers</p>
-                        <p class="how-it-works__advantages-list-description">Board-certified professionals</p>
+                        <a class="how-it-works__advantages-list-item-link" href="/contactus/">
+                            <span class="how-it-works__advantages-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" fill="none" viewBox="0 0 33 32"><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M21.726 28v-2.667A5.333 5.333 0 0 0 16.393 20h-8a5.333 5.333 0 0 0-5.333 5.333V28M12.393 14.667a5.333 5.333 0 1 0 0-10.667 5.333 5.333 0 0 0 0 10.667ZM29.726 28v-2.667a5.333 5.333 0 0 0-4-5.16M21.726 4.173a5.334 5.334 0 0 1 0 10.334"/></svg>
+                            </span>
+                            <p class="how-it-works__advantages-list-title">Licensed Providers</p>
+                            <p class="how-it-works__advantages-list-description">Board-certified professionals</p>
+                        </a>
                     </li>
                     <li class="how-it-works__advantages-list-item switch-item">
-                        <span class="how-it-works__advantages-list-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" fill="none" viewBox="0 0 33 32"><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M25.534 14.666H6.866A2.667 2.667 0 0 0 4.2 17.334v9.334a2.667 2.667 0 0 0 2.667 2.666h18.666a2.667 2.667 0 0 0 2.667-2.666v-9.334a2.667 2.667 0 0 0-2.666-2.666ZM9.533 14.666V9.333a6.667 6.667 0 0 1 13.333 0v5.333"/></svg>
-                        </span>
-                        <p class="how-it-works__advantages-list-title">Secure Telehealth</p>
-                        <p class="how-it-works__advantages-list-description">End-to-end encryption</p>
+                        <a class="how-it-works__advantages-list-item-link" href="/cybersecurity/">
+                            <span class="how-it-works__advantages-list-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="32" fill="none" viewBox="0 0 33 32"><path stroke="#5D96B3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.667" d="M25.534 14.666H6.866A2.667 2.667 0 0 0 4.2 17.334v9.334a2.667 2.667 0 0 0 2.667 2.666h18.666a2.667 2.667 0 0 0 2.667-2.666v-9.334a2.667 2.667 0 0 0-2.666-2.666ZM9.533 14.666V9.333a6.667 6.667 0 0 1 13.333 0v5.333"/></svg>
+                            </span>
+                            <p class="how-it-works__advantages-list-title">Secure Telehealth</p>
+                            <p class="how-it-works__advantages-list-description">End-to-end encryption</p>
+                        </a>
                     </li>
                 </ul>
             </div>
             <div class="how-it-works__btn-wrapper mobile">
-                <a href="" class="btn btn-primary">Start With Your Blueprint</a>
+                <a href="/vitality-wellness-blueprint-lp-new/" class="btn btn-primary">Start With Your Blueprint</a>
             </div>
         </div>
     </section>
@@ -589,12 +572,12 @@
                 </li>
             </ul>
             <div class="progress__btn-wrapper">
-                <a href="" class="btn btn-primary">Access Your Dashboard </a>
+                <a href="/my-account/" class="btn btn-primary">Access Your Dashboard </a>
             </div>
         </div>
     </section>
 
-    <section class="section section__rewards">
+    <section id="vipRewards" class="section section__rewards">
         <div class="main-container">
             <div class="rewards__text">
                 <h2><span>Earn More</span> As You Grow</h2>
@@ -783,7 +766,7 @@
                             </div>
                             <p class="review-item__text">Valhalla Vitality is an awesome community! They are always on top of making sure you’re aware how the compounding is going.</p>
                         </div>
-                        <a href="https://www.trustpilot.com/review/valhallavitality.com?utm_medium=trustbox&utm_source=Mini" target="_blank" rel="nofollow" class="btn btn-primary">See more</a>
+                        <a href="https://www.trustpilot.com/review/valhallavitality.com" target="_blank" rel="nofollow" class="btn btn-primary">See more</a>
                         <p class="review-item-info">Individual results may vary. Testimonials reflect personal experiences and may not represent typical outcomes</p>
                     </div>
                     <div data-tab="reviewForm" class="tab-content">
@@ -845,7 +828,7 @@
                         </li>
                     </ul>
                     <div class="cta-join__btn-wrapper">
-                        <a href="" class="btn btn-primary">Partner With Valhalla Vitality</a>
+                        <a href="https://www.providevitality.com/ " class="btn btn-primary" target="_blank">Partner With Valhalla Vitality</a>
                     </div>
                 </div>
             </div>
@@ -863,10 +846,12 @@
                 Wellness Starts Here
             </h2>
             <p class="section-description">Join thousands who've transformed their health with our provider-guided, AI-powered platform.</p>
-            <a href="" class="btn btn-primary">Start Your Wellness Journey</a>
+            <a href="/vitality-wellness-blueprint-lp-new/" class="btn btn-primary">Start Your Wellness Journey</a>
             <p class="cta-start__annotation">Eligibility and treatment determined after provider consultation. Compounded medications only.</p>
         </div>
     </section>
+</main>
+
 </body>
 
 <script src="./js/main.js"></script>

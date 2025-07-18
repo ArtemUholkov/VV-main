@@ -1,4 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //Hero image animation
+    const slider = document.querySelector('.hero-slider');
+    const viewport = slider.querySelector('.hero-slider__viewport');
+    const img = viewport.querySelector('img');
+
+    let direction = -1;
+    let position = 0;
+    let maxScroll = 0;
+    const speed = 0.5;
+
+    function updateMaxScroll() {
+        const sliderHeight = slider.offsetHeight;
+        const imageHeight = img.offsetHeight;
+        maxScroll = imageHeight - sliderHeight;
+
+        if (maxScroll <= 0) {
+            setTimeout(updateMaxScroll, 100);
+        }
+    }
+
+    function animate() {
+        position += direction * speed;
+
+        if (position < -maxScroll) {
+            position = -maxScroll;
+            direction = 1;
+        } else if (position > 0) {
+            position = 0;
+            direction = -1;
+        }
+
+        viewport.style.transform = `translateY(${position}px)`;
+        requestAnimationFrame(animate);
+    }
+
+    function initScroll() {
+        updateMaxScroll();
+        requestAnimationFrame(animate);
+    }
+
+    if (img.complete) {
+        initScroll();
+    } else {
+        img.onload = initScroll;
+    }
+
+    window.addEventListener('resize', updateMaxScroll);
+
     //Video play
     document.querySelectorAll('.video-item').forEach(preview => {
         const therapyVideo = preview.querySelector('video');
@@ -10,6 +58,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         preview.addEventListener('mouseleave', () => {
             therapyVideo.pause();
+        });
+    });
+
+    //Anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         });
     });
 

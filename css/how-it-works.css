@@ -84,13 +84,17 @@
 }
 
 .how-it-works__advantages-list-item {
+    border-radius: 16px;
+}
+
+.how-it-works__advantages-list-item-link {
     display: flex;
+    height: 100%;
     padding: 8px;
     flex-direction: column;
     align-items: center;
     text-align: center;
     font-size: 14px;
-    border-radius: 16px;
 }
 
 
@@ -210,6 +214,10 @@
         grid-row: span 2;
     }
 
+    .how-it-works__work-list {
+        margin-bottom: 64px;
+    }
+
     .section__how-it-works .section-description {
         margin-bottom: 30px;
     }
@@ -234,7 +242,8 @@
         transition-duration: .25s;
     }
 
-    .how-it-works__advantages-list-item.active {
+    .how-it-works__advantages-list-item.active,
+    .how-it-works__advantages-list-item:hover {
         background-color: #FFF;
         box-shadow: 0 1px 3px 0 rgb(0 0 0 / 15%);
     }

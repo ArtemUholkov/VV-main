@@ -11,6 +11,7 @@
     border: 1px solid #6EAFD0;
     background-color: #DCE7EB;
     border-radius: 24px;
+    overflow: hidden;
 }
 
 .hero__inner .badge {
@@ -33,6 +34,23 @@
     margin-bottom: 24px;
 }
 
+.hero-slider {
+    position: relative;
+    height: 335px;
+    overflow: hidden;
+}
+
+.hero-slider__viewport {
+    height: 100%;
+    will-change: transform;
+}
+
+.custom-slider__image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 @media (max-width: 1023px) {
     .hero__services-swiper {
         margin-left: -20px;
@@ -49,18 +67,18 @@
     overflow: hidden;
 }
 
-.hero__services-list-item a {
+.hero__services-list-item .hero__services-list-inner {
     position: relative;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-.hero__services-list-item a span {
+.hero__services-list-item .hero__services-list-inner .title,
+.hero__services-list-item .hero__services-list-inner .btn {
     position: absolute;
     left: 50%;
     bottom: 20px;
-    transform: translateX(-50%);
 }
 
 
@@ -70,6 +88,7 @@
     line-height: 1.4;
     text-align: center;
     border-radius: 90px;
+    transform: translateX(-50%);
     transition-duration: .25s;
 }
 
@@ -105,8 +124,8 @@
     white-space: nowrap;
 }
 
-.hero__services-list-item.wellness-shop a:after,
-.hero__services-list-item.nexus a:after {
+.hero__services-list-item.wellness-shop .hero__services-list-inner:after,
+.hero__services-list-item.nexus .hero__services-list-inner:after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -133,7 +152,7 @@
     transform-origin: center;
 }
 
-.hero__services-list-item.nexus a {
+.hero__services-list-item.nexus .hero__services-list-inner {
     align-items: center;
 }
 
@@ -158,9 +177,10 @@
     white-space: nowrap;
     z-index: 1;
     opacity: 1;
+    transform: translateX(-50%);
 }
 
-.hero__services-list-item.therapies a:after {
+.hero__services-list-item.therapies .hero__services-list-inner:after {
     content: '';
     position: absolute;
     top: 52px;
@@ -195,7 +215,10 @@
 
 @media (min-width: 1024px) {
     .hero__inner {
+        display: grid;
+        grid-template-columns: 1fr 514px;
         margin-bottom: 64px;
+        align-items: center;
     }
 
     .hero__text {
@@ -203,8 +226,14 @@
         align-items: flex-start;
     }
 
-    .home__hero h1 span {
+    .hero__text h1 {
+        text-align: left;
+        text-transform: uppercase;
         font-size: 52px;
+    }
+
+    .home__hero h1 span {
+        font-size: 36px;
     }
 
     .hero__description {
@@ -212,36 +241,40 @@
         font-size: 20px;
     }
 
-    .hero__services-list-item:not(.rewards) a:hover .title {
+    .hero-slider {
+        height: 582px;
+    }
+
+    .hero__services-list-item:not(.rewards) .hero__services-list-inner:hover .title {
         transform: translate(-50%, -116%);
     }
 
-    .hero__services-list-item.telehealth a:hover .title {
+    .hero__services-list-item.telehealth .hero__services-list-inner:hover .title {
         transform: translate(-50%, -80%);
     }
 
-    .hero__services-list-item.telehealth a:hover .title,
-    .hero__services-list-item.home-labs a:hover .title,
-    .hero__services-list-item.rewards a:hover .title{
+    .hero__services-list-item.telehealth .hero__services-list-inner:hover .title,
+    .hero__services-list-item.home-labs .hero__services-list-inner:hover .title,
+    .hero__services-list-item.rewards .hero__services-list-inner:hover .title{
         background-color: transparent;
         backdrop-filter: blur(0);
     }
 
-    .hero__services-list-item a:hover .btn-secondary {
+    .hero__services-list-item .hero__services-list-inner:hover .btn-secondary {
         opacity: 1;
         transform: translate(-50%, 0);
     }
 
-    .hero__services-list-item.nexus a:hover .operators {
+    .hero__services-list-item.nexus .hero__services-list-inner:hover .operators {
         opacity: 1;
         transition-duration: .25s;
     }
 
-    .hero__services-list-item.nexus a:hover .nexus-img {
+    .hero__services-list-item.nexus .hero__services-list-inner:hover .nexus-img {
         transform: rotate(10deg);
     }
 
-    .hero__services-list-item.therapies a:hover:after {
+    .hero__services-list-item.therapies .hero__services-list-inner:hover:after {
         top: 0;
     }
 
@@ -249,12 +282,39 @@
         transition-duration: .25s;
     }
 
-    .hero__services-list-item.therapies a:hover img {
+    .hero__services-list-item.therapies .hero__services-list-inner:hover img {
         transform: translateY(-50px);
     }
 }
 
+@media (min-width: 1280px) {
+    .hero__inner {
+        padding-right: 60px;
+        padding-left: 60px;
+    }
+
+    .hero__text h1 {
+        font-size: 68px;
+    }
+
+    .hero__text h1 span {
+        font-size: 52px;
+    }
+
+    .hero__text .hero__description {
+        margin-bottom: 42px;
+    }
+
+    .hero__text {
+        padding-left: 0;
+    }
+}
+
 @media (min-width: 1400px) {
+    .hero__inner {
+        padding-left: 90px;
+    }
+
     .hero__services-list {
         justify-content: space-between;
     }

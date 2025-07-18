@@ -17,7 +17,7 @@
     left: 30px;
     right: 30px;
     font-family: 'Gotham-bold', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     color: #F6F6F6;
     z-index: 2;
 }
@@ -73,13 +73,16 @@
 }
 
 @media (min-width: 1280px) {
-
     .therapies__swiper-buttons {
         display: flex;
         justify-content: space-between;
         align-items: end;
         grid-row: span 2;
         grid-column-start: 2;
+    }
+
+    .therapies__swiper .swiper-pagination {
+        display: none;
     }
 
     .therapies__swiper-button {
