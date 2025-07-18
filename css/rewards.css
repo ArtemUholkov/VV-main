@@ -121,6 +121,10 @@
         grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 20px;
     }
+
+    .rewards__text h2 {
+        display: block;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

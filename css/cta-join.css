@@ -109,6 +109,11 @@
         font-size: 32px;
     }
 
+    .cta-join__description {
+        font-size: 18px;
+        max-width: 600px;
+    }
+
     .cta-join__list {
         grid-template-columns: repeat(2, 1fr);
     }
