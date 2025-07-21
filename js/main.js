@@ -2,16 +2,17 @@ document.addEventListener('DOMContentLoaded', () => {
     //Hero image animation
     const slider = document.querySelector('.hero-slider');
     const viewport = slider.querySelector('.hero-slider__viewport');
-    const img = viewport.querySelector('img');
+    const imageWrapper = viewport.querySelector('.custom-slider__image');
 
     let direction = -1;
     let position = 0;
-    let maxScroll = 0;
     const speed = 0.5;
+    let maxScroll = 0;
+    let paused = false;
 
     function updateMaxScroll() {
         const sliderHeight = slider.offsetHeight;
-        const imageHeight = img.offsetHeight;
+        const imageHeight = imageWrapper.offsetHeight;
         maxScroll = imageHeight - sliderHeight;
 
         if (maxScroll <= 0) {
@@ -20,17 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function animate() {
-        position += direction * speed;
+        if (!paused) {
+            position += direction * speed;
 
-        if (position < -maxScroll) {
-            position = -maxScroll;
-            direction = 1;
-        } else if (position > 0) {
-            position = 0;
-            direction = -1;
+            if (position < -maxScroll) {
+                position = -maxScroll;
+                direction = 1;
+            } else if (position > 0) {
+                position = 0;
+                direction = -1;
+            }
+
+            imageWrapper.style.transform = `translateY(${position}px)`;
         }
 
-        viewport.style.transform = `translateY(${position}px)`;
         requestAnimationFrame(animate);
     }
 
@@ -39,13 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animate);
     }
 
-    if (img.complete) {
+    slider.addEventListener('mouseenter', () => {
+        paused = true;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        paused = false;
+    });
+
+    window.addEventListener('load', () => {
         initScroll();
-    } else {
-        img.onload = initScroll;
-    }
+    });
 
     window.addEventListener('resize', updateMaxScroll);
+
 
     //Video play
     document.querySelectorAll('.video-item').forEach(preview => {
@@ -374,8 +385,6 @@ function handleVideoSlideChange(swiper) {
     });
 }
 
-
-
 //Slider cta blueprint
 let ctaBlueprintSlider = null;
 function initCtaBlueprintSlider() {
@@ -406,3 +415,13 @@ function initCtaBlueprintSlider() {
 
 window.addEventListener('DOMContentLoaded', initCtaBlueprintSlider);
 window.addEventListener('resize', initCtaBlueprintSlider);
+
+
+//Trigger chat button
+const newChatButton = document.querySelector('.new-chat-button');
+
+newChatButton.addEventListener('click', function() {
+    const chatButton = document.querySelector('.chatbot-icon-button');
+
+    chatButton.click();
+});

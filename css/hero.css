@@ -289,6 +289,8 @@
 
     .hero-slider {
         height: 582px;
+        padding-right: 4px;
+        padding-left: 4px;
     }
 }
 
@@ -326,5 +328,35 @@
 
     .home__hero .swiper-pagination {
         display: none;
+    }
+}
+
+.custom-slider__image {
+    display: flex;
+    column-gap: 12px;
+}
+
+.custom-slider__image-col {
+    display: flex;
+    flex-direction: column;
+    row-gap: 12px;
+}
+
+.custom-slider__image-col a {
+    display: block;
+    transition-duration: .25s;
+}
+
+.custom-slider__image-col a:hover {
+    transform: scale(1.02);
+}
+
+@media (min-width: 1280px) {
+    .custom-slider__image {
+        column-gap: 20px;
+    }
+
+    .custom-slider__image-col {
+        row-gap: 20px;
     }
 }
